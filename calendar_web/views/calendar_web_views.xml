@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <!-- Action to open -->
+        <act_window
+            id="action_calendar_web"
+            name="Calendario Web"
+            res_model="calendar.web"
+            view_mode="tree,form"
+        />
+        <!-- top level menu: no parent -->
+        <menuitem
+            id="main_menu_calendar_web"
+            name="Creacion Del Calendario Web"
+        />
+        <!-- A first level in the left side menu is needed before using action= attribute-->
+        <menuitem
+            id="l1_menu_calendar_web"
+            name="Creacion del Calendario web"
+            parent="main_menu_calendar_web"
+        />
+        <!-- Menu item to open-->
+        <menuitem
+            id="menu_calendar_web"
+            name="calendar web"
+            parent="l1_menu_calendar_web"
+            action="action_calendar_web"
+        />
+ <!-- Vista de listado --> <record id="view_tree_calendar_web" model="ir.ui.view">
+   <field name="name">Creacion Del calendario web</field>
+    <field name="model">calendar.web</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="nombre"/>
+            <field name="duracion"/>
+            <field name="hora"/>
+            <field name="url"/>
+            <field name="dia"/>
+        </tree>
+ </field>
+ </record>
+ <!-- Vista de búsqueda --> <record id="view_filter_calendar_web model="ir.ui.view">
+  <field name="name">Calendario web Filter</field>
+    <field name="model"calendar.web</field>
+    <field name="arch" type="xml">
+        <search>
+           <field name="nombre"/>
+           <field name="duracion"/>
+           <field name="hora"/>
+           <field name="url"/>
+           <field name="dia"/>
+        </search>
+    </field>
+ </record> <!-- Vista de Formulario --> <record id="view_form_calendar_web" model="ir.ui.view">
+ <field name="name">Creacion Calendario Web Form</field>
+    <field name="model">calendar.web</field>
+     <field name="arch" type="xml">
+        <form>
+            <header>
+                
+            </header>
+            <sheet>
+                <group name="group_top">
+                    <group name="group_left">
+                       <field name="nombre"/>
+                       <field name="duracion"/>
+                       <field name="hora"/>
+                       <field name="url"/>
+                       <field name="dia"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+    </field> </record> </odoo>

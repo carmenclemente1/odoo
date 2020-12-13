@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*- 
+from odoo import models, fields, api 
+class CrearCalendar(models.Model):
+     _name = 'calendar.web'
+     _description = 'Creación de Calendario'
+     
+     nombre = fields.Char('Nombre del usuario', required=True)
+     duracion = fields.Integer('Duracion de clase', required=True)
+     
+     acompaniante = fields.Char('Acompañane', required=True)
+     cantidad = fields.Integer('Cantidad de Sets', required=True)
+     ruta = fields.Char('Ruta', required=True)
+     def reset_matricula(self):
+        self.matricula = '' 
+        return True
+     
+duracion = fields.Integer('Duracion de clase', required=True)
